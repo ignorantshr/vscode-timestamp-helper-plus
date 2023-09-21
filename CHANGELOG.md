@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "timestamp-helper" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- v1.0.0
+	- [enhancement] Support for hover display list customization
+	- [enhancement] Support customization of output timestamp unit

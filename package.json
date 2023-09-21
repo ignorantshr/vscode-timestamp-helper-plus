@@ -1,45 +1,59 @@
 {
-	"name": "timestamp-helper",
-	"displayName": "Timestamp Helper",
-	"description": "easy to display and manipulate timestamp.",
-	"publisher": "kovar",
-	"version": "0.0.1",
+	"name": "timestamp-helper-plus",
+	"displayName": "Timestamp Helper Plus",
+	"description": "Add additional customization based on the  'Timestamp Helper' plugin. Easy to display and manipulate timestamp.",
+	"publisher": "ignorantshr",
+	"version": "1.0.1",
 	"engines": {
-		"vscode": "^1.49.2"
+		"vscode": "^1.80.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kovarxu/vscode-timestamp-helper"
+		"url": "https://github.com/ignorantshr/vscode-timestamp-helper-plus"
 	},
-	"activationEvents": [
-		"onLanguage:plaintext",
-		"onCommand:timestamp-helper.helloWorld",
-		"onCommand:timestamp-helper.transfer"
-	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
-			"title": "Timestamp-Helper",
+			"title": "Timestamp-Helper-plus",
 			"properties": {
-				"timestamp-helper.format": {
+				"timestamp-helper-plus.format": {
 					"type": "string",
 					"default": "YYYY-MM-DD HH:mm:ss",
 					"description": "time display format"
+				},
+				"timestamp-helper-plus.ts-units": {
+					"type": "string",
+					"description": "Selecting time units for timestamp output",
+					"default": "second",
+					"enum": [
+						"second",
+						"millisecond"
+					]
+				},
+				"timestamp-helper-plus.time-zones": {
+					"default": [
+						"UTC:0"
+					],
+					"items": {
+						"type": "string"
+					},
+					"description": "time zones list, line format: <name>:<Time difference from UTC in seconds>",
+					"type": "array"
 				}
 			}
 		},
 		"commands": [
 			{
-				"command": "timestamp-helper.transfer",
+				"command": "timestamp-helper-plus.transfer",
 				"title": "transfer timestamp"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "timestamp-helper.transfer",
+				"command": "timestamp-helper-plus.transfer",
 				"key": "alt+t alt+t",
 				"when": "editorTextFocus"
 			}
@@ -54,7 +68,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.49.2",
+		"@types/vscode": "^1.80.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.0",
 		"@types/node": "^14.0.27",
@@ -64,7 +78,7 @@
 		"glob": "^7.1.6",
 		"mocha": "^8.1.3",
 		"typescript": "^4.0.2",
-		"vscode-test": "^1.4.0"
+		"@vscode/test-electron": "^1.4.0"
 	},
 	"dependencies": {
 		"dayjs": "^1.9.6"

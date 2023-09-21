@@ -1,4 +1,6 @@
-# Timestamp Helper
+# Timestamp Helper Plus
+
+基于[Timestamp Helper](https://github.com/kovarxu/vscode-timestamp-helper)添加了一些定制功能，使其变得更好用一些。
 
 更好地显示和操作时间戳。[English Version](./README.md)
 
@@ -10,19 +12,32 @@
 - 根据数字位数自动猜测秒或毫秒单位
 - 通过命令修改或添加时间戳
 
+以下为加强功能：
+
+- 支持悬停显示列表的定制
+- 支持自定义输出时间戳单位
+
 ### 悬停显示
 
-定制显示格式，配置项：`timestamp-helper.format` 默认值 `YYYY-MM-DD HH:mm:ss`, 定制格式可以参考[dayjs文档](https://dayjs.gitee.io/docs/zh-CN/display/format)
+定制显示格式，配置项：`timestamp-helper-plus.format` 默认值 `YYYY-MM-DD HH:mm:ss`, 定制格式可以参考[dayjs文档](https://dayjs.gitee.io/docs/zh-CN/display/format)
+
+以下为加强功能：
+
+可在配置中按照 `<名字>:<与UTC的时间差（单位：秒）>`来定制时间戳列表。
 
 ### 修改时间戳
 
 * 命令 `transfer timestamp`
 * 快捷键 `alt+t alt+t`
 
+以下为加强功能：
+
+- 可在配置中设定默认的时间戳单位
+
 #### 例子
 
 - 修改时间戳到1天5小时3分之后 `1d5h3m later`
-- 插入某个时间点的时间戳 `$2020-09-12 08:09:26` (默认插入的时间戳是毫秒单位，使用`$`可改成秒) 
+- 插入某个时间点的时间戳 `$2020-09-12 08:09:26` (默认插入的时间戳单位是秒，使用`#`可改成毫秒，或在配置中设置默认单位) 
 - 插入某个UTC时间点的时间戳 `%2020-09-12 08:09:26`
 - 插入相对于当前1个星期加5小时之前的时间 `1w5h ago from now`
 

@@ -1,4 +1,6 @@
-# Timestamp Helper
+# Timestamp Helper Plus
+
+Added some customization based on [Timestamp Helper](https://github.com/kovarxu/vscode-timestamp-helper) to make it a bit better to use.
 
 Make it more convenient to manipulate timestamps. [中文版](./README_CN.md)
 
@@ -10,19 +12,32 @@ Make it more convenient to manipulate timestamps. [中文版](./README_CN.md)
 - guess second or millisecond automatically.
 - provide some commands to add or alter timestamps.
 
+The following enhancements are available:
+
+- Support for hover display list customization
+- Support customization of output timestamp unit
+
 ### Hover Display
 
-Vscode configuration: `timestamp-helper.format`, default to `YYYY-MM-DD HH:mm:ss`, get format patterns [here](https://dayjs.gitee.io/docs/en/display/format)
+Vscode configuration: `timestamp-helper-plus.format`, default to `YYYY-MM-DD HH:mm:ss`, get format patterns [here](https://dayjs.gitee.io/docs/en/display/format)
+
+The following enhancements are available:
+
+The list of timestamps can be customized in the configuration by `<name>:<time difference from UTC in seconds>`.
 
 ### Change Your Timestamp
 
 * command: `transfer timestamp`
 * keybinding: `alt+t alt+t`
 
+The following enhancements are available:
+
+- Default timestamp units can be set in the configuration
+
 #### examples
 
 * modify the timestamp in selections to 1 day, 5 hours and 3 minutes later: `1d5h3m later`
-* insert a timestamp for a specified timing: `$2020-09-12T08:09:26` (millisecond is used by default, you can use $ in front of the timing to turn to second)
+* insert a timestamp for a specified timing: `$2020-09-12T08:09:26` (The default timestamp unit for insertion is seconds, use `#` to change it to milliseconds, or set the default unit in the configuration)
 * insert a timestamp for a specified UTC timing: `%2020-09-12T08:09:26`
 * insert a timestamp 1 week and 5 hours ago from the current time: `1w5h ago from now`
 
