@@ -3,14 +3,16 @@
 	"displayName": "Timestamp Helper Plus",
 	"description": "Add additional customization based on the  'Timestamp Helper' plugin. Easy to display and manipulate timestamp.",
 	"publisher": "ignorantshr",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.80.0"
 	},
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [],
+	"activationEvents": [
+		"onLanguage:plaintext"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ignorantshr/vscode-timestamp-helper-plus"
